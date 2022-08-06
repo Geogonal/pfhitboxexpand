@@ -2,5 +2,5 @@
 
 
 Simply paste this into your executor and enjoy. (THIS IS FOR PHANTOM FORCES ONLY)
-```
+```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Geogonal/pfhitboxexpand/main/main.lua'))()
