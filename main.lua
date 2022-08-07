@@ -11,8 +11,9 @@ function handler(plr)
         teamcolor = game.Players.LocalPlayer.TeamColor
         print(teamcolor)
         if plr.Parent.Name ~= teamcolor then
-            plr.Torso.Size = Vector3.new(size, size, size)
-            plr.Torso.Transparency = trans
+            plr[part].Size = Vector3.new(size, size, size)
+            plr[part].Mesh.Scale = Vector3.new(size, size, size)
+            plr[part].Transparency = trans
         end
     end
 end
@@ -36,9 +37,11 @@ function update()
             for i2, v2 in pairs(v:GetChildren()) do
                 if enabled then
                     v2[part].Size = Vector3.new(size, size, size)
+                    v2[part].Mesh.Scale = Vector3.new(size, size, size)
                     v2.Transparency = trans
                 else
                     v2[part].Size = Vector3.new(size, size, size)
+                    v2[part].Mesh.Scale = Vector3.new(1, 1, 1)
                     v2.Transparency = 0
                 end
             end
@@ -82,6 +85,7 @@ for i, v in pairs(game.Workspace.Players:GetChildren()) do
         if v.Name ~= teamcolor then
             for i2, v2 in pairs(v:GetChildren()) do
                 v2.Torso.Size = Vector3.new(size, size, size)
+                v2[part].Mesh.Scale = Vector3.new(size, size, size)
                 v2.Torso.Transparency = trans
             end
         end
